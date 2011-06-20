@@ -3,9 +3,9 @@ entryadr=0x800120
 
 CFLAGS=-nostdlib -march=armv5te -fno-builtin
 LDFLAGS=-Wl,-Ttext,$(entryadr)
-CC=arm-elf-gcc
-AS=arm-elf-as
-OBJCOPY=arm-elf-objcopy
+CC=arm-none-eabi-gcc
+AS=arm-none-eabi-as
+OBJCOPY=arm-none-eabi-objcopy
 
 all: $(name).BIN
 

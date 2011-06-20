@@ -96,7 +96,7 @@ DEF(aK254, 0xFF81129C)                        //
 DEF(a2009_09_251445, 0xFF8112AC)              //
 DEF(a3_7_7, 0xFF8112A4)                       //
 DEF(aSReadyVerSBuil, 0xFF811240)              //
-NSTUB(FF819E44)                               //
+STUB(FF819E44)                                //
 DEF(aStartupXX, 0xFF8112C0)                   // not present in 1000d
 DEF(aStartupeventfl, 0xFF8112C0)              //
 DEF(Startup_TaskMain, 0xFF81195C)             //
@@ -106,15 +106,15 @@ DEF(dumpall, 0xFF812B88)                      //
 DEF(aUpdate, 0xFF8112E8)                      //
 DEF(Update, 0xFFD20F3C)                       //
 DEF(aLv_on, 0xFF8112F0)                       //
-DEF(Lv_on, 0xFF812CE0)                        //
+DEF(lv_on, 0xFF812CE0)                        //
 DEF(aSend_mpu, 0xFF8112F8)                    //
-DEF(Send_mpu, 0xFF811158)                     //
+DEF(send_mpu, 0xFF811158)                     //
 DEF(aHeap, 0xFF811304)                        //
 DEF(heap, 0xFF812C5C)                         //
 DEF(aSetrefreshtime, 0xFF81130C)              //
 DEF(SetRefreshTime, 0xFF812C4C)               //
 DEF(aLampoff, 0xFF81131C)                     //
-DEF(Lamp_off, 0xFF812D10)                     //
+DEF(lamp_off, 0xFF812D10)                     //
 DEF(aTftoff, 0xFF811324)                      //
 DEF(TftOff, 0xFF812D20)                       //
 

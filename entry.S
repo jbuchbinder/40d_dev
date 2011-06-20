@@ -75,7 +75,7 @@ loc_FF810054:
                 LDR     R1, =0xD9C50000         // Load from Memory
                 STR     R1, [R0,#0x10]          // Store to Memory
                 LDR     R2, =0xC0200000         // Load from Memory
-                MOV     R1, 0xFFFFFFFF
+                MVN     R1, #0
                 STR     R1, [R2,#0x10C]         // Store to Memory
                 STR     R1, [R2,#0xC]           // Store to Memory
                 STR     R1, [R2,#0x1C]          // Store to Memory
@@ -107,7 +107,7 @@ my_romStart:
                 LDR     R3, =0x37840            // Load from Memory
                 SUB     R2, R3, #0x1900         // Rd = Op1 - Op2
                 MOV     R3, R2,LSR#2            // Rd = Op2
-                LDR     R0, =off_FFD51890       // Load from Memory
+                LDR     R0, =0xFFD51890       // Load from Memory
                 MOV     R1, #0x1900             // Rd = Op2
                 MOV     R2, R3                  // Rd = Op2
                 BL      unknown_cache           // Branch with Link
@@ -232,7 +232,7 @@ my_task_Startup:
                 BL      debug_print				// Branch with Link
                 BL      sub_FFD1FDF8            // Branch with Link
                 BL      sub_FFCFC4C8            // Branch with Link
-                MOV     R1, 0x9D8000
+                LDR     R1, =0x9D8000
                 MOV     R0, #0x1C0000           // Rd = Op2
                 BL      sub_FFD1CBF0            // Branch with Link
                 BL      InitializeKernel        // Branch with Link
@@ -284,7 +284,7 @@ my_task_Startup:
                 MOV     R4, #0                  // Rd = Op2
                 STR     R0, [R3]                // Store to Memory
                 MOV     R1, #0x18               // Rd = Op2
-                LDR     R3, =sub_FF81195C       // Load from Memory
+                LDR     R3, =Startup_TaskMain   // Load from Memory
                 MOV     R2, #0x1800             // Rd = Op2
                 LDR     R0, =aTaskmain          // "TaskMain"
                 STR     R4, [SP]				// Store to Memory
@@ -308,7 +308,7 @@ my_task_Startup:
                 LDR     R2, =lv_on              // Load from Memory
                 BL      Register_Func_with_Name            // Branch with Link
                 MOV     R1, R4                  // Rd = Op2
-                LDR     R0, =aSend_mpu_0        // "send_mpu"
+                LDR     R0, =aSend_mpu        // "send_mpu"
                 LDR     R2, =send_mpu           // Load from Memory
                 BL      Register_Func_with_Name            // Branch with Link
                 MOV     R1, R4                  // Rd = Op2
@@ -321,7 +321,7 @@ my_task_Startup:
                 BL      Register_Func_with_Name            // Branch with Link
                 MOV     R1, R4                  // Rd = Op2
                 LDR     R0, =aLampoff           // "LampOff"
-                LDR     R2, =LampOff            // Load from Memory
+                LDR     R2, =lamp_off            // Load from Memory
                 BL      Register_Func_with_Name            // Branch with Link
                 MOV     R1, R4                  // Rd = Op2
                 LDR     R0, =aTftoff            // "TftOff"
