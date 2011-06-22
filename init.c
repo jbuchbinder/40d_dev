@@ -84,7 +84,29 @@ int my_usrRoot(char* pMemPoolStart, unsigned int memPoolSize)
 }
 
 
-void my_taskcreate_Startup() {
+void my_taskcreate_Startup()
+{
+	sub_FFD16DB4(0xC0220094);
+	debug_printf(&aSReadyVerSBuil, &aK254, &a3_7_7, &a2009_09_251445);
+	sub_FFD1FDF8();
+	sub_FFCFC4C8();
+	sub_FFD1CBF0(0x1C0000, &off_9D8000);
+	InitializeKernel();
+	sub_FFD1B5A8(42);
+	sub_FFD058B8();
+	FlushWriteCache_1();
+	sub_FFCFF7A0();
+	Install3VMemory(0xF8000000);
+	RegisterISRs_OCH();
+	InitializeTimerSystem(0x32);
+	InitializeHPTimerSystem(0x10, 0x8, &off_1BC4);
+	ResourceNameServiceInit();
+	sub_FFD08FEC(0);
+	sub_FFD01DA8();
+	
+	
+	
+	
 	CreateMainHeap(0x200000, 0x800000 - 0x10000); // in end of MainHeap - own code - 64 Kb
 	
 	sub_FFB0FF74();

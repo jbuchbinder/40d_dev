@@ -20,6 +20,25 @@
     .globl sub_ ## addr ; sub_ ## addr = 0x ## addr
 
 // vars
+STUB(FFD01DA8)									//
+STUB(FFD08FEC)									//
+DEF(InitializeHPTimerSystem, 0xFFD004F0)		//
+DEF(off_1BC4, 0x1BC4)							//
+DEF(InitializeTimerSystem, 0xFFD0CD78)			//
+STUB(FFCFF7A0)									//
+DEF(FlushWriteCache_1, 0xFFD0CA18)				//
+STUB(FFD058B8)									//
+STUB(FFD1B5A8)									//
+DEF(InitializeKernel, 0xFFD0557C)				//
+STUB(FFD1CBF0)									//
+DEF(off_9D8000, 0x9D8000)						//
+STUB(FFCFC4C8)									//
+STUB(FFD1FDF8)									//
+DEF(a2009_09_251445, 0xFF8112AC)				//
+DEF(a3_7_7, 0xFF8112A4)							//
+DEF(aK254, 0xFF81129C)							//
+DEF(aSReadyVerSBuil, 0xFF811240)				//
+STUB(FFD16DB4)									//
 DEF(usrRoot_init0, 0xFF811058)					//
 DEF(usrRoot_init1, 0xFF811030)					//
 DEF(usrRoot_init2, 0xFF81108C)					//
