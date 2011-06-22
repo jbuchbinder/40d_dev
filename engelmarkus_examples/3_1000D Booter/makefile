@@ -1,13 +1,11 @@
-PATH := ${HOME}/CHDK/toolchain/bin:${PATH}
-
 name=AUTOEXEC
 entryadr=0x800120
 
 CFLAGS=-nostdlib -march=armv5te -fno-builtin -Wall -pedantic -std=gnu99
 LDFLAGS=-Wl,-Ttext,$(entryadr)
-CC=arm-elf-gcc
-AS=arm-elf-as
-OBJCOPY=arm-elf-objcopy
+CC=arm-none-eabi-gcc
+AS=arm-none-eabi-as
+OBJCOPY=arm-none-eabi-objcopy
 
 all: $(name).BIN
 
