@@ -83,7 +83,6 @@ int my_usrRoot(char* pMemPoolStart, unsigned int memPoolSize)
 	return 0;
 }
 
-
 void my_taskcreate_Startup()
 {
 	sub_FFD16DB4(0xC0220094);
@@ -92,7 +91,7 @@ void my_taskcreate_Startup()
 	sub_FFCFC4C8();
 	sub_FFD1CBF0(0x1C0000, &off_9D8000);
 	InitializeKernel();
-	sub_FFD1B5A8(42);
+	sub_FFD1B5A8(0x386D4380);		//needs looked at - dealing with SP
 	sub_FFD058B8();
 	FlushWriteCache_1();
 	sub_FFCFF7A0();
@@ -103,6 +102,22 @@ void my_taskcreate_Startup()
 	ResourceNameServiceInit();
 	sub_FFD08FEC(0);
 	sub_FFD01DA8();
+	sysClockRateSet_100(3);
+	InitializeSerialIO();
+	sub_FFD1B808(0x386D4380, 0x386D4384);			//needs looked at - SP related
+	RtcInit(0x386D4384);							// ????
+	InitHPC();
+	PowerMgrInit(sub_FF819E44);
+	DisablePowerSave();
+	sub_FFD0D494(0x1F, 0x180000, 0x40000);
+	sub_FFD0D998(0xFFFFFFFF, 0x3);
+	CreateEventFlag("StartupEventFlag", 0);
+	CreateTask("TaskMain", 0x18, 0x1800, my_Startup_TaskMain, 0);
+	sub_FFD0D740();
+	Register_Func_with_Name("dumpall", 0, &aDumpall);
+	Setup_Bootstyle_FuncTable();
+	
+	
 	
 	
 	

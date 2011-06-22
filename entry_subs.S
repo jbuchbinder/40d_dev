@@ -20,6 +20,15 @@
     .globl sub_ ## addr ; sub_ ## addr = 0x ## addr
 
 // vars
+DEF(Setup_Bootstyle_FuncTable, 0xFFD211B0)		//
+DEF(aDumpall, 0xFF8112E0)						//
+DEF(Register_Func_with_Name, 0xFFD100C8)		//
+STUB(FFD0D740)									//
+STUB(FFD0D998)									//
+STUB(FFD0D494)									//
+STUB(FF819E44)									//
+DEF(InitHPC, 0xFFD1A844)						//
+STUB(FFD1B808)									//
 STUB(FFD01DA8)									//
 STUB(FFD08FEC)									//
 DEF(InitializeHPTimerSystem, 0xFFD004F0)		//
