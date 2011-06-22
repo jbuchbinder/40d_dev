@@ -68,269 +68,261 @@ my_LedBlueOff:
 
 // 0xFF810054
 loc_FF810054:
-                LDR     R0, =0xC0400000         // Load from Memory
-                LDR     R1, =0x430005           // Load from Memory
-                STR     R1, [R0,#8]             // Store to Memory
-                MOV     R0, #0xC0000000         // Rd = Op2
-                LDR     R1, =0xD9C50000         // Load from Memory
-                STR     R1, [R0,#0x10]          // Store to Memory
-                LDR     R2, =0xC0200000         // Load from Memory
+                LDR     R0, =0xC0400000
+                LDR     R1, =0x430005
+                STR     R1, [R0,#8]
+                MOV     R0, #0xC0000000
+                LDR     R1, =0xD9C50000
+                STR     R1, [R0,#0x10]
+                LDR     R2, =0xC0200000
                 MVN     R1, #0
-                STR     R1, [R2,#0x10C]         // Store to Memory
-                STR     R1, [R2,#0xC]           // Store to Memory
-                STR     R1, [R2,#0x1C]          // Store to Memory
-                STR     R1, [R2,#0x2C]          // Store to Memory
-                STR     R1, [R2,#0x3C]          // Store to Memory
-                STR     R1, [R2,#0x4C]          // Store to Memory
-                STR     R1, [R2,#0x5C]          // Store to Memory
-                STR     R1, [R2,#0x6C]          // Store to Memory
-                STR     R1, [R2,#0x7C]          // Store to Memory
-                STR     R1, [R2,#0x8C]          // Store to Memory
-                STR     R1, [R2,#0x9C]          // Store to Memory
-                STR     R1, [R2,#0xAC]          // Store to Memory
-                STR     R1, [R2,#0xBC]          // Store to Memory
-                STR     R1, [R2,#0xCC]          // Store to Memory
-                STR     R1, [R2,#0xDC]          // Store to Memory
-                STR     R1, [R2,#0xEC]          // Store to Memory
-                STR     R1, [R2,#0xFC]          // Store to Memory
-                LDR     SP, =0x1900             // Load from Memory
-                MOV     R11, #0                 // Rd = Op2
-                LDR     PC, =my_romStart        // Indirect Jump
+                STR     R1, [R2,#0x10C]
+                STR     R1, [R2,#0xC]
+                STR     R1, [R2,#0x1C]
+                STR     R1, [R2,#0x2C]
+                STR     R1, [R2,#0x3C]
+                STR     R1, [R2,#0x4C]
+                STR     R1, [R2,#0x5C]
+                STR     R1, [R2,#0x6C]
+                STR     R1, [R2,#0x7C]
+                STR     R1, [R2,#0x8C]
+                STR     R1, [R2,#0x9C]
+                STR     R1, [R2,#0xAC]
+                STR     R1, [R2,#0xBC]
+                STR     R1, [R2,#0xCC]
+                STR     R1, [R2,#0xDC]
+                STR     R1, [R2,#0xEC]
+                STR     R1, [R2,#0xFC]
+                LDR     SP, =0x1900
+                MOV     R11, #0
+                LDR     PC, =my_romStart
 
 
 // 0xFF8100DC
 my_romStart:
-                MOV     R12, SP                 // Rd = Op2
-                STMFD   SP!, {R4,R11,R12,LR,PC} // Store Block to Memory
-                SUB     R11, R12, #4            // Rd = Op1 - Op2
-                MOV     R4, R0                  // Rd = Op2
-                LDR     R3, =0x37840            // Load from Memory
-                SUB     R2, R3, #0x1900         // Rd = Op1 - Op2
-                MOV     R3, R2,LSR#2            // Rd = Op2
-                LDR     R0, =0xFFD51890       // Load from Memory
-                MOV     R1, #0x1900             // Rd = Op2
-                MOV     R2, R3                  // Rd = Op2
-                BL      unknown_cache           // Branch with Link
-                MOV     R0, R4                  // Rd = Op2
-                BL      my_usrInit              // Branch with Link
-                LDMDB   R11, {R4,R11,SP,PC}     // Load Block from Memory
-
+                MOV     R12, SP
+                STMFD   SP!, {R4,R11,R12,LR,PC}
+                SUB     R11, R12, #4
+                MOV     R4, R0
+                LDR     R3, =0x37840
+                SUB     R2, R3, #0x1900
+                MOV     R3, R2,LSR#2
+                LDR     R0, =0xFFD51890
+                MOV     R1, #0x1900
+                MOV     R2, R3
+                BL      unknown_cache
+                MOV     R0, R4
+                BL      my_usrInit
+                LDMDB   R11, {R4,R11,SP,PC}
 
 
 // 0xFF810FC8
 my_usrInit:
-                MOV     R12, SP                 // Rd = Op2
-                STMFD   SP!, {R11,R12,LR,PC}    // Store Block to Memory
-                SUB     R11, R12, #4            // Rd = Op1 - Op2
-                SUB     SP, SP, #4              // Rd = Op1 - Op2
-                STR     R0, [R11,#-0x10]        // Store to Memory
-                LDR     R0, [R11,#-0x10]        // Load from Memory
-                BL      sysStart                // Branch with Link
-                MOV     R0, #1                  // Rd = Op2
-                MOV     R1, #2                  // Rd = Op2
-                BL      cacheLibInit            // Branch with Link
-                BL      excVecInit              // Branch with Link
-                BL      sysHwInit               // Branch with Link
-                BL      sub_FF810B54            // Branch with Link
-                BL      my_usrInit_1            // Branch with Link
-                LDMDB   R11, {R11,SP,PC}        // Load Block from Memory
+                MOV     R12, SP
+                STMFD   SP!, {R11,R12,LR,PC}
+                SUB     R11, R12, #4
+                SUB     SP, SP, #4
+                STR     R0, [R11,#-0x10]
+                LDR     R0, [R11,#-0x10]
+                BL      sysStart
+                MOV     R0, #1
+                MOV     R1, #2
+                BL      cacheLibInit
+                BL      excVecInit
+                BL      sysHwInit
+                BL      sub_FF810B54
+                BL      my_usrInit_1
+                LDMDB   R11, {R11,SP,PC}
  
 
 // 0xFF810B7C
 my_usrInit_1:
-                MOV     R12, SP                 // Rd = Op2
-                STMFD   SP!, {R11,R12,LR,PC}    // Store Block to Memory
-                SUB     R11, R12, #4            // Rd = Op1 - Op2
-                SUB     SP, SP, #8              // Rd = Op1 - Op2
-                BL      classLibInit            // Branch with Link
-                BL      taskLibInit				// Branch with Link
-                LDR     R3, =0x11540            // Load from Memory
-                LDR     R0, =0x365E0            // Load from Memory
-                LDR     R1, [R3]                // Load from Memory
-                LDR     R2, =0x36D20            // Load from Memory
-                MOV     R3, #0x100              // Rd = Op2
-                BL      qInit                   // Branch with Link
-                LDR     R3, =0x11580            // Load from Memory
-                LDR     R0, =0x113E4            // Load from Memory
-                LDR     R1, [R3]                // Load from Memory
-                BL      qInit                   // Branch with Link
-                LDR     R3, =0x114C4            // Load from Memory
-                LDR     R0, =0x33800            // Load from Memory
-                LDR     R1, [R3]                // Load from Memory
-                BL      qInit                   // Branch with Link
-                BL      sub_FFD30180            // Branch with Link
-                BL      sub_FF810504            // Branch with Link
-                MOV     R3, R0                  // Rd = Op2
-                MOV     R2, #0xC00              // Rd = Op2
-                STR     R2, [SP,#0]				// Store to Memory
-                MOV     R2, #0                  // Rd = Op2
-                STR     R2, [SP,#4]				// Store to Memory
-                LDR     R0, =my_usrRoot         // Load from Memory
-                MOV     R1, #0x4000             // Rd = Op2
-                LDR     R2, =0x37840            // Load from Memory
-                BL      kernelInit              // Branch with Link
-                LDMDB   R11, {R11,SP,PC}        // Load Block from Memory
+                MOV     R12, SP
+                STMFD   SP!, {R11,R12,LR,PC}
+                SUB     R11, R12, #4
+                SUB     SP, SP, #8
+                BL      classLibInit
+                BL      taskLibInit
+                LDR     R3, =0x11540
+                LDR     R0, =0x365E0
+                LDR     R1, [R3]
+                LDR     R2, =0x36D20
+                MOV     R3, #0x100
+                BL      qInit
+                LDR     R3, =0x11580
+                LDR     R0, =activeQHead
+                LDR     R1, [R3]
+                BL      qInit
+                LDR     R3, =0x114C4
+                LDR     R0, =0x33800
+                LDR     R1, [R3]
+                BL      qInit
+                BL      sub_FFD30180
+                BL      sub_FF810504
+                MOV     R3, R0
+                MOV     R2, #0xC00
+                STR     R2, [SP]
+                MOV     R2, #0
+                STR     R2, [SP,#4]
+                LDR     R0, =my_usrRoot
+                MOV     R1, #0x4000
+                LDR     R2, =0x37840
+                BL      kernelInit
+                LDMDB   R11, {R11,SP,PC}
 
 
 // 0xFF8110BC
 my_usrRoot:
-                MOV     R12, SP                 // Rd = Op2
-                STMFD   SP!, {R11,R12,LR,PC}    // Store Block to Memory
-                SUB     R11, R12, #4            // Rd = Op1 - Op2
-                SUB     SP, SP, #8              // Rd = Op1 - Op2
-                STR     R0, [R11,#-0x10]        // Store to Memory
-                STR     R1, [R11,#0xFFFFFFEC]   // Store to Memory
-                BL      sub_FF811004            // Branch with Link
-                LDR     R0, [R11,#-0x10]        // Load from Memory
-                LDR     R1, [R11,#0xFFFFFFEC]   // Load from Memory
-                BL      memInit                 // Branch with Link
-                LDR     R0, [R11,#-0x10]        // Load from Memory
-                LDR     R1, [R11,#0xFFFFFFEC]   // Load from Memory
-                BL      sub_FFD3D62C            // Branch with Link
-                BL      usrMmuInit				// Branch with Link
-                BL      sysClockInit            // Branch with Link
-                MOV     R0, #0x32               // Rd = Op2
-                BL      selectInit              // Branch with Link
-                BL      usrRoot_init0           // Branch with Link
-                BL      usrRoot_init1           // Branch with Link
-                BL      usrRoot_init2           // Branch with Link
-                BL      selTaskDeleteHookAdd    // Branch with Link
-                BL      sub_FFD50CC0            // Branch with Link
-                BL      my_usrAppInit           // Branch with Link
-                LDMDB   R11, {R11,SP,PC}        // Load Block from Memory
+                MOV     R12, SP
+                STMFD   SP!, {R11,R12,LR,PC}
+                SUB     R11, R12, #4
+                SUB     SP, SP, #8
+                STR     R0, [R11,#-0x10]
+                STR     R1, [R11,#0xFFFFFFEC]
+                BL      sub_FF811004
+                LDR     R0, [R11,#-0x10]
+                LDR     R1, [R11,#0xFFFFFFEC]
+                BL      memInit
+                LDR     R0, [R11,#-0x10]
+                LDR     R1, [R11,#0xFFFFFFEC]
+                BL      sub_FFD3D62C
+                BL      usrMmuInit
+                BL      sysClockInit
+                MOV     R0, #0x32
+                BL      selectInit
+                BL      usrRoot_init0
+                BL      usrRoot_init1
+                BL      usrRoot_init2
+                BL      selTaskDeleteHookAdd
+                BL      sub_FFD50CC0
+                BL      my_usrAppInit
+                LDMDB   R11, {R11,SP,PC}
 
 
 // 0xFF810654
 my_usrAppInit:
-                MOV     R12, SP					// Rd = Op2
-                STMFD   SP!, {R11,R12,LR,PC}	// Store Block to Memory
-                SUB     R11, R12, #4			// Rd = Op1 - Op2
-                BL      my_task_Startup			// Branch with Link
-                LDMDB   R11, {R11,SP,PC}		// Load Block from Memory
+                MOV     R12, SP
+                STMFD   SP!, {R11,R12,LR,PC}
+                SUB     R11, R12, #4
+                BL      my_task_Startup
+                LDMDB   R11, {R11,SP,PC}
 
 
 // 0xFF81132C
 my_task_Startup:
-
-				//BL CreateMyTask
-	
-                STMFD   SP!, {R4,R5,LR}         // Store Block to Memory
-                MOV     R3, #0x38400000         // Rd = Op2
-                MOV     R0, #0x94               // Rd = Op2
-                LDR     R5, =aK254              // "K254"
-                ADD     R3, R3, #0x2D4000       // Rd = Op1 + Op2
-                ADD     R0, R0, #0xC0000000     // Rd = Op1 + Op2
-                SUB     SP, SP, #0x2C           // Rd = Op1 - Op2
-                ADD     R3, R3, #0x380          // Rd = Op1 + Op2
-                ADD     R0, R0, #0x220000       // Rd = Op1 + Op2
-                STR     R3, [SP,#0x4]			// Store to Memory
-                BL      sub_FFD16DB4            // Branch with Link
-                LDR     R3, =a2009_09_251445    // "2009.09.25 14:45:32"
-                LDR     R2, =a3_7_7             // "3.7.7"
-                MOV     R1, R5                  // Rd = Op2
-                LDR     R0, =aSReadyVerSBuil    // "--------------------------\n%s READY : V"...
-                BL      debug_print				// Branch with Link
-                BL      sub_FFD1FDF8            // Branch with Link
-                BL      sub_FFCFC4C8            // Branch with Link
+                STMFD   SP!, {R4,R5,LR}
+                MOV     R3, #0x38400000
+                MOV     R0, #0x94
+                LDR     R5, =aK254
+                ADD     R3, R3, #0x2D4000
+                ADD     R0, R0, #0xC0000000
+                SUB     SP, SP, #0x2C
+                ADD     R3, R3, #0x380
+                ADD     R0, R0, #0x220000
+                STR     R3, [SP,#4]
+                BL      sub_FFD16DB4
+                LDR     R3, =a2009_09_251445
+                LDR     R2, =a3_7_7
+                MOV     R1, R5
+                LDR     R0, =aSReadyVerSBuil
+                BL      debug_print
+                BL      sub_FFD1FDF8
+                BL      sub_FFCFC4C8
                 LDR     R1, =0x9D8000
-                MOV     R0, #0x1C0000           // Rd = Op2
-                BL      sub_FFD1CBF0            // Branch with Link
-                BL      InitializeKernel        // Branch with Link
-                LDR     R0, [SP,#04]			// Load from Memory
-                BL      sub_FFD1B5A8            // Branch with Link
-                BL      sub_FFD058B8            // Branch with Link
-                BL      FlushWriteCache_1       // Branch with Link
-                BL      sub_FFCFF7A0            // Branch with Link
-                MOV     R0, #0xF8000000         // Rd = Op2
-                BL      Install3VMemory         // Branch with Link
-                BL      RegisterISRs_OCH        // Branch with Link
-                MOV     R0, #0x32               // Rd = Op2
-                BL      InitializeTimerSystem   // Branch with Link
-                LDR     R2, =0x1BC4             // Load from Memory
-                MOV     R1, #8                  // Rd = Op2
-                MOV     R0, #0x10               // Rd = Op2
-                BL      InitializeHPTimerSystem // Branch with Link
-                BL      ResourceNameServiceInit // Branch with Link
-                MOV     R0, #0                  // Rd = Op2
-                BL      sub_FFD08FEC            // Branch with Link
-                BL      sub_FFD01DA8            // Branch with Link
-                MOV     R0, #3                  // Rd = Op2
-                BL      sysClockRateSet_100     // Branch with Link
-                BL      InitializeSerialIO      // Branch with Link
-                ADD     R4, SP, #8				// Rd = Op1 + Op2
-                ADD     R0, SP, #4				// Rd = Op1 + Op2
-                MOV     R1, R4                  // Rd = Op2
-                BL      sub_FFD1B808            // Branch with Link
-                MOV     R0, R4                  // Rd = Op2
-                BL      RtcInit					// Branch with Link
-                BL      InitHPC					// Branch with Link
-                LDR     R0, =sub_FF819E44       // Load from Memory
-                BL      PowerMgrInit            // Branch with Link
-                BL      DisablePowerSave        // Branch with Link
-				
-				//BL	CreateMyTask
-				
-                MOV     R2, #0x40000            // Rd = Op2
-                MOV     R1, #0x180000           // Rd = Op2
-                MOV     R0, #0x1F               // Rd = Op2
-                BL      sub_FFD0D494            // Branch with Link
+                MOV     R0, #0x1C0000
+                BL      sub_FFD1CBF0
+                BL      InitializeKernel
+                LDR     R0, [SP,#4]
+                BL      sub_FFD1B5A8
+                BL      sub_FFD058B8
+                BL      FlushWriteCache_1
+                BL      sub_FFCFF7A0
+                MOV     R0, #0xF8000000
+                BL      Install3VMemory
+                BL      RegisterISRs_OCH
+                MOV     R0, #0x32
+                BL      InitializeTimerSystem
+                LDR     R2, =0x1BC4
+                MOV     R1, #8
+                MOV     R0, #0x10
+                BL      InitializeHPTimerSystem
+                BL      ResourceNameServiceInit
                 MOV     R0, #0
-                MOV     R1, #3                  // Rd = Op2
-                BL      sub_FFD0D998            // Branch with Link
-                MOV     R1, #0                  // Rd = Op2
-                LDR     R0, =aStartupeventfl    // "StartupEventFlag"
-                BL      CreateEventFlag			// Branch with Link
-                LDR     R3, =0x11CFC            // Load from Memory
-                MOV     R4, #0                  // Rd = Op2
-                STR     R0, [R3]                // Store to Memory
-                MOV     R1, #0x18               // Rd = Op2
-                LDR     R3, =Startup_TaskMain   // Load from Memory
-                MOV     R2, #0x1800             // Rd = Op2
-                LDR     R0, =aTaskmain          // "TaskMain"
-                STR     R4, [SP]				// Store to Memory
-                BL      CreateTask				// Branch with Link
-				
-				BL		CreateMyTask
-				
-                BL      sub_FFD0D740            // Branch with Link
-                MOV     R1, R4                  // Rd = Op2
-                LDR     R0, =aDumpall           // "dumpall"
-                LDR     R2, =dumpall            // Load from Memory
-                BL      Register_Func_with_Name            // Branch with Link
-                BL      Setup_Bootstyle_FuncTable          // Branch with Link
-                BL      sub_FFD1888C            // Branch with Link
-                MOV     R1, R4                  // Rd = Op2
-                LDR     R0, =aUpdate            // "update"
-                LDR     R2, =Update       // Load from Memory
-                BL      Register_Func_with_Name            // Branch with Link
-                MOV     R1, R4                  // Rd = Op2
-                LDR     R0, =aLv_on             // "lv_on"
-                LDR     R2, =lv_on              // Load from Memory
-                BL      Register_Func_with_Name            // Branch with Link
-                MOV     R1, R4                  // Rd = Op2
-                LDR     R0, =aSend_mpu        // "send_mpu"
-                LDR     R2, =send_mpu           // Load from Memory
-                BL      Register_Func_with_Name            // Branch with Link
-                MOV     R1, R4                  // Rd = Op2
-                LDR     R0, =aHeap              // "heap"
-                LDR     R2, =heap               // Load from Memory
-                BL      Register_Func_with_Name            // Branch with Link
-                MOV     R1, R4                  // Rd = Op2
-                LDR     R0, =aSetrefreshtime    // "SetRefreshTime"
-                LDR     R2, =SetRefreshTime     // Load from Memory
-                BL      Register_Func_with_Name            // Branch with Link
-                MOV     R1, R4                  // Rd = Op2
-                LDR     R0, =aLampoff           // "LampOff"
-                LDR     R2, =lamp_off            // Load from Memory
-                BL      Register_Func_with_Name            // Branch with Link
-                MOV     R1, R4                  // Rd = Op2
-                LDR     R0, =aTftoff            // "TftOff"
-                LDR     R2, =TftOff             // Load from Memory
-                BL      Register_Func_with_Name            // Branch with Link
-                MOV     R0, R5                  // Rd = Op2
-                BL      taskcreate_CmdShell     // Branch with Link
-                ADD     SP, SP, #0x2C           // Rd = Op1 + Op2
-                LDMFD   SP!, {R4,R5,PC}         // Load Block from Memory
+                BL      sub_FFD08FEC
+                BL      sub_FFD01DA8
+                MOV     R0, #3
+                BL      sysClockRateSet_100
+                BL      InitializeSerialIO
+                ADD     R4, SP, #8
+                ADD     R0, SP, #4
+                MOV     R1, R4
+                BL      sub_FFD1B808
+                MOV     R0, R4
+                BL      RtcInit
+                BL      InitHPC
+                LDR     R0, =loc_FF819E44
+                BL      PowerMgrInit
+                BL      DisablePowerSave
+                MOV     R2, #0x40000
+                MOV     R1, #0x180000
+                MOV     R0, #0x1F
+                BL      sub_FFD0D494
+                MVN     R0, #0
+                MOV     R1, #3
+                BL      sub_FFD0D998
+                MOV     R1, #0
+                LDR     R0, =aStartupeventfl
+                BL      CreateEventFlag
+                LDR     R3, =0x11CFC
+                MOV     R4, #0
+                STR     R0, [R3]
+                MOV     R1, #0x18
+                LDR     R3, =Startup_TaskMain
+                MOV     R2, #0x1800
+                LDR     R0, =aTaskmain
+                STR     R4, [SP]
+                BL      CreateTask
+                BL      CreateMyTask
+                BL      sub_FFD0D740
+                MOV     R1, R4
+                LDR     R0, =aDumpall
+                LDR     R2, =dumpall
+                BL      Register_Func_with_Name
+                BL      Setup_Bootstyle_FuncTable
+                BL      sub_FFD1888C
+                MOV     R1, R4
+                LDR     R0, =aUpdate
+                LDR     R2, =Update
+                BL      Register_Func_with_Name
+                MOV     R1, R4
+                LDR     R0, =aLv_on
+                LDR     R2, =lv_on
+                BL      Register_Func_with_Name
+                MOV     R1, R4
+                LDR     R0, =aSend_mpu
+                LDR     R2, =send_mpu
+                BL      Register_Func_with_Name
+                MOV     R1, R4
+                LDR     R0, =aHeap
+                LDR     R2, =heap
+                BL      Register_Func_with_Name
+                MOV     R1, R4
+                LDR     R0, =aSetrefreshtime
+                LDR     R2, =SetRefreshTime
+                BL      Register_Func_with_Name
+                MOV     R1, R4
+                LDR     R0, =aLampoff
+                LDR     R2, =lamp_off
+                BL      Register_Func_with_Name
+                MOV     R1, R4
+                LDR     R0, =aTftoff
+                LDR     R2, =TftOff
+                BL      Register_Func_with_Name
+                MOV     R0, R5
+                BL      taskcreate_CmdShell
+                ADD     SP, SP, #0x2C
+                LDMFD   SP!, {R4,R5,PC}
+ 
 
 
 
