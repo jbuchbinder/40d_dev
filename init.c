@@ -116,22 +116,32 @@ void my_taskcreate_Startup()
 	sub_FFD0D740();
 	Register_Func_with_Name("dumpall", 0, &aDumpall);
 	Setup_Bootstyle_FuncTable();
-	
-	
-	
-	
-	
-	
-	CreateMainHeap(0x200000, 0x800000 - 0x10000); // in end of MainHeap - own code - 64 Kb
-	
-	sub_FFB0FF74();
-	sub_FFB2E108(0x386D4380);
-	
-	EnableDispatch();
-	CreateTask("Startup", 0x19, 0x2000, my_task_Startup, 0);
+	sub_FFD1888C();
+	Register_Func_with_Name("update", 0, &aUpdate);
+	Register_Func_with_Name("lv_on", 0, &aLv_on);
+	Register_Func_with_Name("send_mpu", 0, &aSend_mpu);
+	Register_Func_with_Name("heap", 0, &aHeap);
+	Register_Func_with_Name("SetRefreshTime", 0, &aSetrefreshtime);
+	Register_Func_with_Name("LampOff", 0, &aLampoff);
+	Register_Func_with_Name("TftOff", 0, &aTftoff);
+	taskcreate_CmdShell(&aK254);
 }
 
-void my_task_Startup() {
+void my_task_Startup()
+{
+	CreateTask("TaskTuneData", 0x18, 0x1800, sub_FF8115A8, 0); //not sure about that 0
+	printf_log(0, 5, "[STARTUP] TaskMain");
+	sub_FFC43B60();
+	//sub_FFC42A64(
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	DebugManager(1, 0x1F, 0x180000, 0x40000, 0x1C0000);
 	
 	dmstart();

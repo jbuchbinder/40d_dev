@@ -20,6 +20,18 @@
     .globl sub_ ## addr ; sub_ ## addr = 0x ## addr
 
 // vars
+STUB(FFC42A64)									//
+STUB(FFC43B60)									//
+STUB(FF8115A8)									//
+DEF(taskcreate_CmdShell, 0xFFD10074)			//
+DEF(aTftoff, 0xFF811324)						//
+DEF(aLampoff, 0xFF81131C)						//
+DEF(aSetrefreshtime, 0xFF81130C)				//
+DEF(aHeap, 0xFF811304)							//
+DEF(aSend_mpu, 0xFF8112F8)						//
+DEF(aLv_on, 0xFF8112F0)							//
+DEF(aUpdate, 0xFF8112E8)						//
+STUB(FFD1888C)									//
 DEF(Setup_Bootstyle_FuncTable, 0xFFD211B0)		//
 DEF(aDumpall, 0xFF8112E0)						//
 DEF(Register_Func_with_Name, 0xFFD100C8)		//

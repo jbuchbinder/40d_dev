@@ -478,7 +478,7 @@ DEF(DP_Suspend, 0xFF964530)
 DEF(DP_Terminate, 0xFF96448C)
 DEF(DP_Terminate2, 0xFF9643B0)
 DEF(DP_exit, 0xFF9700C4)
-DEF(DP_printf_log, 0xFF965814)
+DEF(DP_printf_log, 0xFFD0D5F4)								//
 DEF(DS_ObjectAddedEx, 0xFF9E7D60)
 DEF(DS_RequestTransfer, 0xFF9E7AC8)
 DEF(DarkCurrentThreshold, 0x0000689C)
