@@ -1,0 +1,9 @@
+SECTIONS {
+	first 0x800120 :
+	{
+		entry.o;
+/*		entry_subs.o; */
+		main.o;
+		crc16.o
+	}
+}
