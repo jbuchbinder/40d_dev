@@ -8,7 +8,7 @@ use strict;
 use Getopt::Long;
 use File::Slurp;
 
-my $user_file = "autoexec.bin";
+my $user_file = "AUTOEXEC.BIN";
 my $header_file		= "e6kr5107.fir_0_header.bin";
 my $flasher_file	= "e6kr5107.fir_1_flasher.bin";
 my $output_file		= "1000d.fir";

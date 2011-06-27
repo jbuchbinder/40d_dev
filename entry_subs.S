@@ -1,306 +1,140 @@
-    .text
-    .org 0
-
-
-#define DEF(n,a) \
-    .globl n; n = a
-
-#define NSTUB(name, addr)\
-    .globl name ;\
-    .weak name ;\
-    name: ;\
-	ldr  pc, = addr
-
-#define NHSTUB(name, addr)\
-    .globl name ;\
-    name: ;\
-	ldr  pc, = addr
-
-#define STUB(addr)\
-    .globl sub_ ## addr ; sub_ ## addr = 0x ## addr
-
-// vars
-STUB(FFC42A64)									//
-STUB(FFC43B60)									//
-STUB(FF8115A8)									//
-DEF(taskcreate_CmdShell, 0xFFD10074)			//
-DEF(aTftoff, 0xFF811324)						//
-DEF(aLampoff, 0xFF81131C)						//
-DEF(aSetrefreshtime, 0xFF81130C)				//
-DEF(aHeap, 0xFF811304)							//
-DEF(aSend_mpu, 0xFF8112F8)						//
-DEF(aLv_on, 0xFF8112F0)							//
-DEF(aUpdate, 0xFF8112E8)						//
-STUB(FFD1888C)									//
-DEF(Setup_Bootstyle_FuncTable, 0xFFD211B0)		//
-DEF(aDumpall, 0xFF8112E0)						//
-DEF(Register_Func_with_Name, 0xFFD100C8)		//
-STUB(FFD0D740)									//
-STUB(FFD0D998)									//
-STUB(FFD0D494)									//
-STUB(FF819E44)									//
-DEF(InitHPC, 0xFFD1A844)						//
-STUB(FFD1B808)									//
-STUB(FFD01DA8)									//
-STUB(FFD08FEC)									//
-DEF(InitializeHPTimerSystem, 0xFFD004F0)		//
-DEF(off_1BC4, 0x1BC4)							//
-DEF(InitializeTimerSystem, 0xFFD0CD78)			//
-STUB(FFCFF7A0)									//
-DEF(FlushWriteCache_1, 0xFFD0CA18)				//
-STUB(FFD058B8)									//
-STUB(FFD1B5A8)									//
-DEF(InitializeKernel, 0xFFD0557C)				//
-STUB(FFD1CBF0)									//
-DEF(off_9D8000, 0x9D8000)						//
-STUB(FFCFC4C8)									//
-STUB(FFD1FDF8)									//
-DEF(a2009_09_251445, 0xFF8112AC)				//
-DEF(a3_7_7, 0xFF8112A4)							//
-DEF(aK254, 0xFF81129C)							//
-DEF(aSReadyVerSBuil, 0xFF811240)				//
-STUB(FFD16DB4)									//
-DEF(usrRoot_init0, 0xFF811058)					//
-DEF(usrRoot_init1, 0xFF811030)					//
-DEF(usrRoot_init2, 0xFF81108C)					//
-DEF(sysClockInit, 0xFF810B28)					//
-DEF(usrMnuInit, 0xFF810C50)						//
-DEF(nullsub_307, 0xFFD35450)					//
-DEF(off_37840, 0x37840)							//
-DEF(sub_FF810B54, 0xFF810B54)					//
-DEF(sub_FF810504, 0XFF810504)					//
-DEF(sysStart, 0xFF810F74)						//
-DEF(off_FFD51890,0xFFD51890)
-DEF(bss_begin,0x00DFB0)
-DEF(bss_end,0x02A550)
-DEF(sysStartType,0x028F60)
-DEF(readyQHead        ,0x028DE0)
-DEF(qPriBMapClassId   ,0x00D840)
-DEF(readyQBMap        ,0x0298A0)
-DEF(activeQHead       ,0x00D6E8)
-DEF(qFifoClassId      ,0x00D880)
-DEF(tickQHead         ,0x025A20)
-DEF(qPriListClassId   ,0x00D7C4)
-DEF(proc_sysMmuLibInit ,0x00DE5C)
-DEF(MemDescArray       ,0x001918)
-DEF(MemDescArrayCount  ,0x00197C)
-DEF(fdConsole          ,0x00199C)
-DEF(hResourceName,0x00CFD4)
-
-DEF(OlcInfoData,0x0179E8)
-DEF(OlcInfoChangedFlags,0x017AA8)
-DEF(OlcInfoFlags,0x027E48)
-DEF(hOlcInfoSem,0x017B0C)
-DEF(hOlcInfoMessQueue,0x017B08)
-DEF(OlcInfoEmptyStr,0xFF9408A8)
-DEF(proc_OlcTftNotifyChange,0x005580)
-DEF(OlcNotifyFreeze,0x005584)
-DEF(OlcNotifyChangeInProgress,0x005594)
-DEF(OlcCounterFlag1,0x005588)
-DEF(OlcCounterFlag2,0x00558C)
-DEF(OlcCounterFlag3,0x005590)
-
-DEF(aCf_extend_iso,0xFF93C198)
-
-
-NSTUB(unknown_cache_, 0xFF8100D0)
-
-NSTUB(cacheEnable_, 0xFFB520D4)
-
-STUB(FFB45DF4)
-
-NSTUB(getErrorNumber, 0xFFB50E1C)
-STUB(FFB50C90)
-NSTUB(uai_FFB11D7C, 0xFFB11D7C)
-NSTUB(uai_FFB0FF74, 0xFFB0FF74)
-NSTUB(uai_FFB2E108,0xFFB2E108)
-NSTUB(write_multitaskAssert, 0xFFB1D14C)
-NSTUB(RegProc_ExportAsEvent, 0xFFB06408)
-NSTUB(RegProc_Shutdown, 0xFFB1C7C8)
-NSTUB(install3VMemory, 0xFFB2EAA4)
-NSTUB(romMenagerInit, 0xFFB29450)
-STUB(FFB23DC8)
-NSTUB(RegProc_PropertyService, 0xFFB23FD4)
-NSTUB(RegProc_ErrorList, 0xFFB06188)
-NSTUB(RegProc_FatalErrors, 0xFFB05824)
-STUB(FFB09D5C)
-NSTUB(RegProc_BlockUntilAfterTimeout, 0xFFB1D7A4)
-STUB(FFB07740)
-NSTUB(RegName_ResourceName, 0xFFB1A5CC)
-NSTUB(memorySuite, 0xFFB15524)
-
-STUB(FFB2BD6C)
-NSTUB(serialIO_sub_FFB2BB14, 0xFFB2BB14)
-STUB(FFAF84E4)
-NSTUB(AdjustDefect, 0xFF9FDAF0)
-NSTUB(CameraAdjustments, 0xFFA01970)
-NSTUB(writeproc_to_D184_D188, 0xFFB2E63C)
-
-NSTUB(AfeGain_CmosParam, 0xFFAFA1C4)
-NSTUB(EngInit, 0xFFA35E50)
-STUB(FFA2EA1C)
-NSTUB(RegisterCapISR, 0xFFAFB9EC)
-NSTUB(taskcreate_FaceSensor, 0xFFAFEA28)
-NSTUB(REMInit, 0xFFAFBDA4)
-NSTUB(taskcreate_ActSweep, 0xFFB00D10)
-NSTUB(LCDInit, 0xFFAFD7C8)
-STUB(FFAFD2DC)
-NSTUB(DisplayInit, 0xFFA05DF8)
-NSTUB(InitPowerSaveFunc, 0xFFA05A68)
-STUB(FFA03B0C)
-STUB(FFA05114)
-NSTUB(PlayInit, 0xFFA0CF48)
-NSTUB(LensTableInit, 0xFF95ACAC)
-NSTUB(LensPoTableInit, 0xFF95DE1C)
-NSTUB(CaptureInit_, 0xFF9FD864)
-NSTUB(RegProc_Bathtub_Saturate, 0xFFA015D4)
-STUB(FFA40390)
-NSTUB(memset_193C8, 0xFF9FED88)
-NSTUB(ColorAdjustments, 0xFFA11BCC)
-STUB(FFA44A28)
-
-NSTUB(taskcreate_DigProp, 0xFF93B460)
-NSTUB(taskcreate_ShootMain, 0xFF8114B8)
-NSTUB(taskcreate_OlcInfo, 0xFF94147C)
-NSTUB(SomeISRprocs, 0xFFAF9FC8)
-NSTUB(taskcreate_MainCtrl, 0xFF81BC64)
-STUB(FFA024AC)
-
-
-NSTUB(DarkPassInit, 0xFFA4262C)
-STUB(FFA43068)
-NSTUB(BathTubInit, 0xFF9FFA6C)
-NSTUB(PREPRO_sub_FFA38AA8, 0xFFA38AA8)
-STUB(FFA453D8)
-NSTUB(PREPRO_sub_FFA39480, 0xFFA39480)
-NSTUB(WBDetectionInit,0xFFA02BCC)
-
-NSTUB(PREPRO_sub_FFA44254, 0xFFA44254)
-NSTUB(DefsEvents, 0xFFA03034)
-NSTUB(PREPRO_sub_FFA4597C, 0xFFA4597C)
-NSTUB(PREPRO_sub_FFA45EDC, 0xFFA45EDC)
-NSTUB(VShadingEvent, 0xFFA036B8)
-NSTUB(PREPRO_sub_FFA466D4, 0xFFA466D4)
-
-NSTUB(PREPRO_sub_FFA3BD60, 0xFFA3BD60)
-NSTUB(PREPRO_sub_FFA3D6D8, 0xFFA3D6D8)
-NSTUB(PREPRO_sub_FFA3EEA8, 0xFFA3EEA8)
-NSTUB(RESAMPLE_sub_FFA3C944, 0xFFA3C944)
-STUB(FFA3E210)
-STUB(FFA3F9DC)
-STUB(FFA3A7D0)
-STUB(FFA3B19C)
-STUB(FFA37E3C)
-STUB(FFA39F7C)
-STUB(FFA3847C)
-STUB(FFA2F1FC)
-STUB(FFA30FD8)
-STUB(FFA32268)
-STUB(FFA32954)
-STUB(FFA331BC)
-STUB(FFA35354)
-STUB(FFA31A24)
-STUB(FFA369EC)
-NSTUB(RGBInit, 0xFFA18CAC)
-
-NSTUB(DebugMenager, 0xFFB1E838)
-NSTUB(DbgMgr_sub_FFB1EB28, 0xFFB1EB28)
-NSTUB(RegProc_DbgMgr, 0xFFB1F23C)
-NSTUB(IInit, 0xFFB2F97C)
-NSTUB(LangInit_, 0xFF883008)
-NSTUB(LangInit, 0xFF918AF4)
-NSTUB(ctrlMan_sub_FF9136D4, 0xFF9136D4)
-NSTUB(ctrlSrv_sub_FF914388, 0xFF914388)
-STUB(FF9182CC)
-STUB(FF926E40)
-STUB(FF917824)
-STUB(FF91772C)
-
-
-NSTUB(PlayInit2, 0xFF82E740)
-NSTUB(ColorBarInit, 0xFF86CD50)
-NSTUB(LCDAdjustInit, 0xFF86CA50)
-STUB(FFB29348)
-
-
-NSTUB(RegProc_BootDisk, 0xFF8111F8)
-
-
-NSTUB(registerResource, 0xFFB14854)
-NSTUB(registerResource_env, 0xFFA76330)
-NSTUB(USB1, 0xFFA7D594)
-NSTUB(USB2, 0xFFA7BD9C)
-STUB(FFA7BE14)
-STUB(FFA7D778)
-STUB(FFA8590C)
-STUB(FFA5E0F4)
-STUB(FFA76A30)
-STUB(FFA6642C)
-
-
-
-
-STUB(FF9DE698)
-STUB(FFA70DE8)
-
-STUB(FFA5D8A0)
-
-STUB(FF9D74F8)
-STUB(FF9D9AD0)
-NSTUB(RAPIInit, 0xFFA70E20)
-
-STUB(FF95EC54)
-STUB(FF978AD0)
-STUB(FF9EB94C)
-NSTUB(USB3, 0xFFA76510)
-
-
-NSTUB(FactoryModeRegisterPro, 0xFF94949C)
-NSTUB(DPInit, 0xFF964420)
-
-STUB(FF98CF4C)
-NSTUB(EdLedRegisterProcedures, 0xFFAFCAF0)
-
-STUB(FF82B2FC)
-
-NSTUB(MonInit, 0xFF946EA0)
-
-
-DEF(aUSBROOTDEVICEHANDLE, 0xFF810F80)
-DEF(aU2VBUS, 0xFF810F80)
-DEF(aUsbc20VbusSupp, 0xFF810F88)
-DEF(aDEVICESPEED, 0xFF810F9C)
-
-
-
-
-
-
-
-
-DEF(aStartup, 0xFF810F60)
-
+///////////////////////////////////////////////////////////////////////////////////////
+//	stubs for 1000d based off of 450d project from engelmarkus - thank you for your help!
+//	initial testings for Canon Rebel XS / 1000d.
 //
-STUB(FFD50CC0)											//
-STUB(FFB0FF74)
-STUB(FFB2E108)
-STUB(FFAFE5BC)
-STUB(FFB07740)
-STUB(FFB2BD6C)
-STUB(FFA03B0C)
-STUB(FFA05114)
-STUB(FFA24838)
-STUB(FFA35354)
-STUB(FF926E40)
-STUB(FFB29348)
-STUB(FFA5D8A0)
-STUB(FF95EC54)
-STUB(FF9EB94C)
-STUB(FF98CF4C)
+//	by: Coutts
+///////////////////////////////////////////////////////////////////////////////////////
+
+.text
+.org 0
+
+
+#define NSTUB(name,addr) \
+.global name; \
+name = addr
+
+//my_romStart_FF8100DC
+NSTUB(off_FFD51890, 0xFFD51890)
+NSTUB(unknown_cache_FF81011C, 0xFF81011C)
+
+//my_usrInit_FF810FC8
+NSTUB(sysStart_FF810F74, 0xFF810F74)
+NSTUB(cacheLibInit_FFD43734, 0xFFD43734)
+NSTUB(excVecInit_FFD503B0, 0xFFD503B0)
+NSTUB(sysHwInit_FF8103C8, 0xFF8103C8)
+NSTUB(sub_FF810B54, 0xFF810B54)
+
+//my_usrInit_1_FF810B7C
+NSTUB(classLibInit_FFD43348, 0xFFD43348)
+NSTUB(taskLibInit_FFD333F4, 0xFFD333F4)
+NSTUB(qInit_FFD35EA4, 0xFFD35EA4)
+NSTUB(sub_FFD30180, 0xFFD30180)
+NSTUB(sub_FF810504, 0xFF810504)
+NSTUB(kernelInit_FFD35290, 0xFFD35290)
+
+//my_usrRoot_my_usrRoot_FF8110BC
+NSTUB(sub_FF811004, 0XFF811004)
+NSTUB(memInit_FFD3DDC8, 0xFFD3DDC8)
+NSTUB(sub_FFD3D62C, 0xFFD3D62C)
+NSTUB(usrMmuInit_FF810C50, 0xFF810C50)
+NSTUB(sysClockInit_FF810B28, 0xFF810B28)
+NSTUB(selectInit_FFD3BCBC, 0xFFD3BCBC)
+NSTUB(usrRoot_init0_FF811058, 0xFF811058)
+NSTUB(usrRoot_init1_FF811030, 0xFF811030)
+NSTUB(usrRoot_init2_FF81108C, 0xFF81108C)
+NSTUB(selTaskDeleteHookAdd_FFD3BC54, 0xFFD3BC54)
+NSTUB(sub_FFD50CC0, 0xFFD50CC0)
+
+//my_task_Startup_FF81132C
+NSTUB(aK254, 0xFF81129C)
+NSTUB(sub_FFD16DB4, 0xFFD16D84)
+NSTUB(a2009_09_25144532, 0xFF8112AC)
+NSTUB(a3_7_7, 0xFF8112A4)
+NSTUB(aSReadyVerSBuildDateS, 0xFF811240)
+NSTUB(printf_FFD421C0, 0xFFD421C0)
+NSTUB(my_9D8000, 0x9D8000)
+NSTUB(sub_FFD1FDF8, 0xFFD1FDF8)
+NSTUB(sub_FFCFC4C8, 0xFFCFC4C8)
+NSTUB(sub_FFD1CBF0, 0xFFD1CBF0)
+NSTUB(InitializeKernel_FFD0557C, 0xFFD0557C)
+NSTUB(sub_FFD1B5A8, 0xFFD1B5A8)
+NSTUB(sub_FFD058B8, 0xFFD058B8)
+NSTUB(FlushWriteCache_1_FFD0CA18, 0xFFD0CA18)
+NSTUB(sub_FFCFF7A0, 0xFFCFF7A0)
+NSTUB(Install3VMemory_FFD17E9C, 0xFFD17E9C)
+NSTUB(RegisterISRs_OCH_FFD01A80, 0xFFD01A80)
+NSTUB(InitializeTimerSystem_FFD0CD78, 0xFFD0CD78)
+NSTUB(InitializeHPTimerSystem_FFD004F0, 0xFFD004F0)
+NSTUB(ResourceNameServiceInit_FFD0AC3C, 0xFFD0AC3C)
+NSTUB(sub_FFD08FEC, 0xFFD08FEC)
+NSTUB(sub_FFD01DA8, 0xFFD01DA8)
+NSTUB(sysClockRateSet_100_FFD1753C, 0xFFD1753C)
+NSTUB(InitializeSerialIO_FFD173C0, 0xFFD173C0)
+NSTUB(sub_FFD1B808, 0xFFD1B808)
+NSTUB(RtcInit_FFCFD72C, 0xFFCFD72C)
+NSTUB(InitHPC_FFD1A844, 0xFFD1A844)
+NSTUB(sub_FF819E44, 0xFF819E44)
+NSTUB(PowerMgrInit_FFD1B978, 0xFFD1B978)
+NSTUB(DisablePowerSave_FFD1B9D4, 0xFFD1B9D4)
+NSTUB(sub_FFD0D494, 0xFFD0D494)
+NSTUB(sub_FFD0D998, 0xFFD0D998)
+NSTUB(aStartupeventflag, 0xFF8112C0)
+NSTUB(CreateEventFlag_FFD03214, 0xFFD03214)
+NSTUB(Startup_TaskMain_FF81195C, 0xFF81195C)
+NSTUB(aTaskmain, 0xFF8112D4)
+NSTUB(CreateTask_FFD05A54, 0xFFD05A54)
+NSTUB(sub_FFD0D740, 0xFFD0D740)
+NSTUB(aDumpall, 0xFF8112E0)
+NSTUB(loc_FF812B88, 0xFF812B88)
+NSTUB(Register_Func_with_Name_FFD100C8, 0xFFD100C8)
+NSTUB(Setup_Bootstyle_FuncTable_FFD211B0, 0xFFD211B0)
+NSTUB(sub_FFD1888C, 0xFFD1888C)
+NSTUB(aUpdate, 0xFF8112E8)
+NSTUB(Update_FFD20F3C, 0xFFD20F3C)
+NSTUB(aLv_on, 0xFF8112F0)
+NSTUB(Lv_on_FF812CE0, 0xFF812CE0)
+NSTUB(aSend_mpu_0, 0xFF8112F8)
+NSTUB(Send_mpu_FF811158, 0xFF811158)
+NSTUB(aHeap, 0xFF811304)
+NSTUB(sub_FF812C5C, 0xFF812C5C)
+NSTUB(aSetrefreshtime, 0xFF81130C)
+NSTUB(Set_refresh_time_FF812C4C, 0xFF812C4C)
+NSTUB(aLampoff, 0xFF81131C)
+NSTUB(Lamp_off_FF812D10, 0xFF812D10)
+NSTUB(aTftoff, 0xFF811324)
+NSTUB(loc_FF812D20, 0xFF812D20)
+NSTUB(taskcreate_CmdShell_FFD10074, 0xFFD10074)
 
 
 
-// procs
-#include  "funclist.S"
+
+
+
+//other
+NSTUB(eventproc_RiseEvent, 0xFFCFF728)
+NSTUB(SleepTask, 0xFFD05708)
+NSTUB(CreateTask, 0xFFD05A54)
+NSTUB(dumpf, 0xFFD0E1C4)
+NSTUB(FIO_OpenFile, 0xFFCDD54C)
+NSTUB(FIO_CreateFile, 0xFFCDD558)
+NSTUB(FIO_RemoveFile, 0xFFCDD564)
+NSTUB(FIO_CloseFile, 0xFFCDD570)
+NSTUB(FIO_ReadFile, 0xFFCDD57C)
+NSTUB(FIO_WriteFile, 0xFFCDD588)
+NSTUB(FIO_SeekFile, 0xFFCDD594)
+NSTUB(ioGlobalStdSet, 0xFFD3F214)
+NSTUB(malloc, 0xFFD3CC64)
+NSTUB(free, 0xFFD3CC4C)
+NSTUB(ReceiveMessageQueue, 0xFFD03FDC)
+NSTUB(CreateMessageQueue, 0xFFD03C60)
+NSTUB(TryReceiveMessageQueue, 0xFFD04288)
+NSTUB(PostMessageQueue, 0xFFD04464)
+NSTUB(TryPostMessageQueue, 0xFFD046C0)
+NSTUB(printf, 0xFFD421C0)
+NSTUB(printf_log, 0xFFD0D5F4)
+NSTUB(EnableBootDisk, 0xFFD21248)
+NSTUB(DisableBootDisk, 0xFFD21260)
+
 .align 2
-fin:
+
+
