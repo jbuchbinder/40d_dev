@@ -1,7 +1,9 @@
 #include "main.h"
 
-#define LED_RED     0xC02200E0
-#define LED_BLUE    0xC02200E8
+#define LEDBLUE     *(int*)0xC02200E8
+#define LEDRED      *(int*)0xC02200E0
+#define LEDON   0x46
+#define LEDOFF  0x44
 
 //dump ram and rom
 void dumpmemo()
@@ -29,17 +31,21 @@ void dumpmemo()
 
 void MyTask2()
 {
-	SleepTask(5000);
+	msleep(5000);
+    
+    static int x = 1;
+    prop_request_change(0x80040007, &x, 4);
+    
 	while (1)
 	{
-		*((volatile long*)LED_BLUE) = 0x46;
-		SleepTask(500);
-		*((volatile long*)LED_BLUE) = 0x44;
-		SleepTask(500);
+		LEDBLUE = LEDON;
+		msleep(500);
+		LEDBLUE = LEDOFF;
+		msleep(500);
 	}
-	/*  SleepTask(15000);
+	/*  msleep(15000);
 	 dumpf();
-	 */ //SleepTask(5000);
+	 */ //msleep(5000);
 	//*((volatile long*)LED_RED) = 0x46;
 	
 	

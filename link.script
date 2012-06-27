@@ -1,5 +1,5 @@
 SECTIONS {
-	first 0x800120 :
+	first 0x800000 :
 	{
 		entry.o;
 		entry_subs.o;

@@ -112,7 +112,7 @@ NSTUB(taskcreate_CmdShell_FFD10074, 0xFFD10074)
 
 //other
 NSTUB(eventproc_RiseEvent, 0xFFCFF728)
-NSTUB(SleepTask, 0xFFD05708)
+NSTUB(msleep, 0xFFD05708)
 NSTUB(CreateTask, 0xFFD05A54)
 NSTUB(dumpf, 0xFFD0E1C4)
 NSTUB(FIO_OpenFile, 0xFFCDD54C)
@@ -134,6 +134,9 @@ NSTUB(printf, 0xFFD421C0)
 NSTUB(printf_log, 0xFFD0D5F4)
 NSTUB(EnableBootDisk, 0xFFD21248)
 NSTUB(DisableBootDisk, 0xFFD21260)
+
+
+NSTUB(prop_request_change, 0xFFC3ED7C)
 
 .align 2
 

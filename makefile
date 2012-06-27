@@ -1,5 +1,5 @@
 name=AUTOEXEC
-entryadr=0x7F0000
+entryadr=0x800000
 
 CFLAGS=-nostdlib -march=armv5te -fno-builtin -Wall -pedantic -std=gnu99
 LDFLAGS=-Wl,-Ttext,$(entryadr)
