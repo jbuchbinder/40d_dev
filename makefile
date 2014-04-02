@@ -3,9 +3,10 @@ entryadr=0x800000
 
 CFLAGS=-nostdlib -march=armv5te -fno-builtin -Wall -pedantic -std=gnu99
 LDFLAGS=-Wl,-Ttext,$(entryadr)
-CC=arm-none-eabi-gcc
-AS=arm-none-eabi-as
-OBJCOPY=arm-none-eabi-objcopy
+GCCPATH=/opt/gcc-arm-none-eabi-4_7-2013q2/bin
+CC=$(GCCPATH)/arm-none-eabi-gcc
+AS=$(GCCPATH)/arm-none-eabi-as
+OBJCOPY=$(GCCPATH)/arm-none-eabi-objcopy
 
 all: $(name).BIN
 
