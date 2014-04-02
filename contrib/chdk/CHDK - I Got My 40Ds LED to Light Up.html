@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="robots" content="noindex"/>
+<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok9v=02fcfa4f56/"},atok:"41746201e8abdd2e863965a758c522d6",petok:"be1bb3293f50e05aae81a1c0304513c088919c24-1396455614-1800",zone:"setepontos.com",rocket:"0",apps:{"ga_key":{"ua":"UA-25368391-1","ga_bs":"2"}}}];var a=document.createElement("script"),b=document.getElementsByTagName("script")[0];a.async=!0;a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok9v=b064e16429/cloudflare.min.js";b.parentNode.insertBefore(a,b);}}catch(e){};
+//]]>
+</script>
+<link rel="canonical" href="http://chdk.setepontos.com/index.php?topic=1586.0"/>
+<title>Print Page - I Got My 40D's LED to Light Up!</title>
+<style type="text/css">body,a{color:#000;background:#fff;}body,td,.normaltext{font-family:Verdana,arial,helvetica,serif;font-size:small;}h1#title{font-size:large;font-weight:bold;}h2#linktree{margin:1em 0 2.5em 0;font-size:small;font-weight:bold;}dl#posts{width:90%;margin:0;padding:0;list-style:none;}dt.postheader{border:solid #000;border-width:1px 0;padding:4px 0;}dd.postbody{margin:1em 0 2em 2em;}table{empty-cells:show;}blockquote,code{border:1px solid #000;margin:3px;padding:1px;display:block;}code{font:x-small monospace;}blockquote{font-size:x-small;}.smalltext,.quoteheader,.codeheader{font-size:x-small;}.largetext{font-size:large;}.centertext{text-align:center;}hr{height:1px;border:0;color:black;background-color:black;}</style>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25368391-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+(function(b){(function(a){"__CF"in b&&"DJS"in b.__CF?b.__CF.DJS.push(a):"addEventListener"in b?b.addEventListener("load",a,!1):b.attachEvent("onload",a)})(function(){"FB"in b&&"Event"in FB&&"subscribe"in FB.Event&&(FB.Event.subscribe("edge.create",function(a){_gaq.push(["_trackSocial","facebook","like",a])}),FB.Event.subscribe("edge.remove",function(a){_gaq.push(["_trackSocial","facebook","unlike",a])}),FB.Event.subscribe("message.send",function(a){_gaq.push(["_trackSocial","facebook","send",a])}));"twttr"in b&&"events"in twttr&&"bind"in twttr.events&&twttr.events.bind("tweet",function(a){if(a){var b;if(a.target&&a.target.nodeName=="IFRAME")a:{if(a=a.target.src){a=a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);b=0;for(var c;c=a[b];++b)if(c.indexOf("url")===0){b=unescape(c.split("=")[1]);break a}}b=void 0}_gaq.push(["_trackSocial","twitter","tweet",b])}})})})(window);
+/* ]]> */
+</script>
+</head>
+<body>
+<h1 id="title">CHDK Forum</h1>
+<h2 id="linktree">Canon DSLR Development (+ other development) => DSLR Hack development => Topic started by: ASalina on 02 / June / 2008, 08:47:17</h2>
+<dl id="posts">
+<dt class="postheader">
+Title: <strong>I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>ASalina</strong> on <strong>02 / June / 2008, 08:47:17</strong>
+</dt>
+<dd class="postbody">
+YES! The program to generate .fir files is working now and the little LED scanner program loaded (as though it was a firmware updater). It flashed the drive activity LED and the Direct Print button&#039;s LED (the button itself has an LED in it that I didn&#039;t know about until just now).<br/><br/>I am psyched! Although the LEDs didn&#039;t flash out the offset from 0xC0220000 like I had hoped (I think the delay is too short?), it does prove that programs can be run as if they were the firmware updater/flasher.<br/><br/>Now I have to use udumper instead of the LED scanner!<br/><br/>Wish me luck!<br/>
+</dd>
+<dt class="postheader">
+Title: <strong>Re: I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>mx3</strong> on <strong>02 / June / 2008, 09:14:17</strong>
+</dt>
+<dd class="postbody">
+<div class="quoteheader"><div class="topslice_quote"><a href="http://chdk.setepontos.com/index.php?topic=1586.msg14224#msg14224">Quote from: ASalina on 02 / June / 2008, 08:47:17</a></div></div><blockquote class="bbc_standard_quote">YES! The program to generate .fir files is working now and <br/></blockquote><div class="quotefooter"><div class="botslice_quote"></div></div>please share your packer and LED scanner<br/>attach them to forum
+</dd>
+<dt class="postheader">
+Title: <strong>Re: I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>ASalina</strong> on <strong>02 / June / 2008, 10:13:36</strong>
+</dt>
+<dd class="postbody">
+<div class="quoteheader"><div class="topslice_quote"><a href="http://chdk.setepontos.com/index.php?topic=1586.msg14225#msg14225">Quote from: mx3 on 02 / June / 2008, 09:14:17</a></div></div><blockquote class="bbc_standard_quote"><div class="quoteheader"><div class="topslice_quote"><a href="http://chdk.setepontos.com/index.php?topic=1586.msg14224#msg14224">Quote from: ASalina on 02 / June / 2008, 08:47:17</a></div></div><blockquote class="bbc_alternate_quote">YES! The program to generate .fir files is working now and <br/></blockquote><div class="quotefooter"><div class="botslice_quote"></div></div>please share your packer and LED scanner<br/>attach them to forum<br/></blockquote><div class="quotefooter"><div class="botslice_quote"></div></div><br/>Don&#039;t ever type &quot;rm * .zip&quot; when you meant to type &quot;rm *.zip&quot;...<br/>You&#039;ll erase all of your work. Like I just did.<br/><br/>I&#039;ll have to see if I can pull the files back somehow. and post them when I can<br/>
+</dd>
+<dt class="postheader">
+Title: <strong>Re: I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>ASalina</strong> on <strong>02 / June / 2008, 11:40:09</strong>
+</dt>
+<dd class="postbody">
+Ok, I was able to retrieve the files from the partition.<br/><br/>Zip file below contains source for mkfir and scanled plus needed files pheader.tmpl and fheader.tmpl.<br/><br/>
+</dd>
+<dt class="postheader">
+Title: <strong>Re: I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>PhyrePhoX</strong> on <strong>02 / June / 2008, 11:51:34</strong>
+</dt>
+<dd class="postbody">
+thats the reason why i aliased <br/><div class="quoteheader"><div class="topslice_quote">Quote</div></div><blockquote class="bbc_standard_quote">alias rm &#039;rm -i&#039;</blockquote><div class="quotefooter"><div class="botslice_quote"></div></div>in my rconfig :D<br/><br/>nice find, thumbs up :)
+</dd>
+<dt class="postheader">
+Title: <strong>Re: I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>owerlord</strong> on <strong>02 / June / 2008, 12:22:47</strong>
+</dt>
+<dd class="postbody">
+nice !<br/>now you can grab an old&nbsp; mouse, pull out the light reciver, connect it to the microphone, and record with something (:Audacity). There you can count easyer.<br/><br/>Usefull thing is also ESD. I used it to make a real-time microphone-console. It transferes the audio data from the mic to stdout. I redirect it to my program. Program analyse it and print out the messages on the screen.
+</dd>
+<dt class="postheader">
+Title: <strong>Re: I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>mx3</strong> on <strong>02 / June / 2008, 12:23:25</strong>
+</dt>
+<dd class="postbody">
+<div class="quoteheader"><div class="topslice_quote"><a href="http://chdk.setepontos.com/index.php?topic=1586.msg14231#msg14231">Quote from: ASalina on 02 / June / 2008, 11:40:09</a></div></div><blockquote class="bbc_standard_quote">Zip file below contains source for mkfir and scanled.<br/></blockquote><div class="quotefooter"><div class="botslice_quote"></div></div><br/>why do you need &quot;j&quot; loop?<br/><strong>update: sorry. </strong> <del>why to use weird addresses (X1,X2,X3)? (ARM architecture does not support well such data alligments)</del><br/>I think you scan procedure shoul be something like that<br/><br/><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><div class="block_code" style="font-size: x-small"><pre><code>scan()<br/>{<br/>	long *base = (long*)0xC0220000, *addr;<br/>	long k;<br/><br/>	for(addr = base; addr &lt; base + 0x100; addr++){<br/>			k = *addr;<br/>			*addr = 0x46;<br/>			delay(1&lt;&lt;15);<br/>			*addr = k;<br/>			delay(1&lt;&lt;15);<br/>		}<br/>}<br/><br/></code></pre></div><br/>also I&#039;m not sure about -Ttext,1900
+</dd>
+<dt class="postheader">
+Title: <strong>Re: I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>owerlord</strong> on <strong>02 / June / 2008, 12:30:32</strong>
+</dt>
+<dd class="postbody">
+the &quot;j&quot; loop is to blik out the offset. If led is at 0xC02200A0 - it will blink 40 times (40*sizeof(int)=0xA0).<br/><br/>I think it should be -Ttext,0x800000 or -Ttext,0x800030 - I don&#039;t know where is code aligned in 40D (in 400D code starts at 0x800030)
+</dd>
+<dt class="postheader">
+Title: <strong>Re: I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>ASalina</strong> on <strong>02 / June / 2008, 12:32:38</strong>
+</dt>
+<dd class="postbody">
+@mx3<br/><br/>&gt;why do you need &quot;j&quot; loop?<br/><br/>It blinks out the offset from the base address. You count the blinks and add that to the base address to get the LED&#039;s address.<br/><br/>&gt;why to use weird addresses (X1,X2,X3)? (ARM architecture &gt;does not support well such data alligments)<br/><br/>I&#039;m not sure what you mean?<br/><br/>&gt;I think you scan procedure shoul be something like that<br/><br/>I&#039;ll look at your code and try it.<br/><br/>&gt;also I&#039;m not sure about -Ttext,1900<br/><br/>Nor am I. I got that from udumper. It seems to work, though.<br/>
+</dd>
+<dt class="postheader">
+Title: <strong>Re: I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>owerlord</strong> on <strong>02 / June / 2008, 12:36:59</strong>
+</dt>
+<dd class="postbody">
+I spend a bit of IDA analysing code from my compilations, and ended with something like that:<br/><br/>entryadr=0x800030<br/><br/>CFLAGS=-nostdlib -march=armv5te -fno-builtin<br/>LDFLAGS=-Wl,-Ttext,$(entryadr)<br/><br/>You can add -O2 if you want - but it is no fun when you analyse the code, becose it just erase all the code that don&#039;t do anything. - it can erase your delay also !!
+</dd>
+<dt class="postheader">
+Title: <strong>Re: I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>ASalina</strong> on <strong>02 / June / 2008, 12:40:00</strong>
+</dt>
+<dd class="postbody">
+@mx3<br/><br/>&gt;&nbsp;&nbsp;&nbsp;long *base = (long*)0xC0220000, *addr;<br/>&gt;&nbsp;&nbsp;&nbsp;long k;<br/><br/>sizeof(long) = 8 bytes. sizeof(int) = 4 bytes.<br/><br/>ARM works with 32 bits.<br/>
+</dd>
+<dt class="postheader">
+Title: <strong>Re: I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>ASalina</strong> on <strong>02 / June / 2008, 12:41:15</strong>
+</dt>
+<dd class="postbody">
+<div class="quoteheader"><div class="topslice_quote"><a href="http://chdk.setepontos.com/index.php?topic=1586.msg14242#msg14242">Quote from: owerlord on 02 / June / 2008, 12:36:59</a></div></div><blockquote class="bbc_standard_quote">I spend a bit of IDA analysing code from my compilations, and ended with something like that:<br/><br/>entryadr=0x800030<br/><br/>CFLAGS=-nostdlib -march=armv5te -fno-builtin<br/>LDFLAGS=-Wl,-Ttext,$(entryadr)<br/><br/>You can add -O2 if you want - but it is no fun when you analyse the code, becose it just erase all the code that don&#039;t do anything. - it can erase your delay also !!<br/></blockquote><div class="quotefooter"><div class="botslice_quote"></div></div><br/>Ok, I&#039;ll fix those things and post a new version.<br/>
+</dd>
+<dt class="postheader">
+Title: <strong>Re: I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>ASalina</strong> on <strong>02 / June / 2008, 12:48:51</strong>
+</dt>
+<dd class="postbody">
+I&#039;ve tried a few changes to scanled.c to slow the blinking down, but I still only get one blink on each LED. The two LED&#039;s addresses must be close together because they blink close to the same time. The addresses must also be down close to the base address because they blink soon after the program starts (a second or two).<br/><br/>I don&#039;t know why they only blink once.<br/>
+</dd>
+<dt class="postheader">
+Title: <strong>Re: I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>mx3</strong> on <strong>02 / June / 2008, 12:56:55</strong>
+</dt>
+<dd class="postbody">
+<div class="quoteheader"><div class="topslice_quote"><a href="http://chdk.setepontos.com/index.php?topic=1586.msg14241#msg14241">Quote from: ASalina on 02 / June / 2008, 12:32:38</a></div></div><blockquote class="bbc_standard_quote">&gt;why do you need &quot;j&quot; loop?<br/><br/>It blinks out the offset from the base address. You count the blinks and add that to the base address to get the LED&#039;s address.<br/></blockquote><div class="quotefooter"><div class="botslice_quote"></div></div><br/><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><div class="block_code" style="font-size: x-small"><pre><code>	int *base = 0xC0220000;<br/>	for(i = 0; i &lt; 0x100; i++)<br/>		for(j = 0; j &lt; i; j++){<br/>			k = *(base+i);<br/>}<br/></code></pre></div>this code means that :<br/>&nbsp;work with address 0xC0220000 will be done 0x99 times ( first time skipped due to i=0;j=0; j&lt;i==false)<br/>&nbsp;work with address 0xC0220004 will be done 0x98 times ( etc)<br/>&nbsp;work with address 0xC0220008 will be done 0x97 times<br/>&nbsp;work with address 0xC0220010 will be done 0x96 times<br/><br/>I don&#039;t think you need this<br/><br/><br/><div class="quoteheader"><div class="topslice_quote"><a href="http://chdk.setepontos.com/index.php?topic=1586.msg14241#msg14241">Quote from: ASalina on 02 / June / 2008, 12:32:38</a></div></div><blockquote class="bbc_standard_quote">&gt;why to use weird addresses (X1,X2,X3)? (ARM architecture &gt;does not support well such data alligments)<br/>I&#039;m not sure what you mean?<br/></blockquote><div class="quotefooter"><div class="botslice_quote"></div></div>it is my mistake. ignore it
+</dd>
+<dt class="postheader">
+Title: <strong>Re: I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>mx3</strong> on <strong>02 / June / 2008, 13:11:01</strong>
+</dt>
+<dd class="postbody">
+<div class="quoteheader"><div class="topslice_quote"><a href="http://chdk.setepontos.com/index.php?topic=1586.msg14248#msg14248">Quote from: mx3 on 02 / June / 2008, 12:56:55</a></div></div><blockquote class="bbc_standard_quote">this code means that :<br/>&nbsp;work with address 0xC0220000 will be done 0x99 times ( first time skipped due to i=0;j=0; j&lt;i==false)<br/>&nbsp;work with address 0xC0220004 will be done 0x98 times ( etc)<br/>&nbsp;work with address 0xC0220008 will be done 0x97 times<br/>&nbsp;work with address 0xC0220010 will be done 0x96 times<br/></blockquote><div class="quotefooter"><div class="botslice_quote"></div></div><br/><strong>update: wrong </strong><del>one more my mistake... :-)<br/>actually first address will be scanned 0x99*0x100(?) times....</del><br/><br/><strong>update: I &#039;m quiting now.<br/>my beer takes my mind away</strong>
+</dd>
+<dt class="postheader">
+Title: <strong>Re: I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>ASalina</strong> on <strong>02 / June / 2008, 13:43:23</strong>
+</dt>
+<dd class="postbody">
+<div class="quoteheader"><div class="topslice_quote"><a href="http://chdk.setepontos.com/index.php?topic=1586.msg14249#msg14249">Quote from: mx3 on 02 / June / 2008, 13:11:01</a></div></div><blockquote class="bbc_standard_quote"><br/><strong>update: I &#039;m quiting now.<br/>my beer takes my mind away</strong><br/></blockquote><div class="quotefooter"><div class="botslice_quote"></div></div><br/>I very tired too. :-)<br/><br/>I&#039;ve been narrowing down the location of the LEDs. What I&#039;ve gotten to so far is that the Direct Print LED is between 0xC022003A and 0xC022003C, and the Drive Activity LED is right below it.<br/><br/>I&#039;ll continue narrowing it down after I&#039;ve had some sleep.<br/>
+</dd>
+<dt class="postheader">
+Title: <strong>Re: I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>owerlord</strong> on <strong>02 / June / 2008, 14:08:57</strong>
+</dt>
+<dd class="postbody">
+remember: (int *) 0xC0220000 + 1 = 0xC0220004 !!<br/>I used:<br/><br/>for (i=0;i&lt;d; i++)<br/>{ asm(&quot;NOP&quot;);asm(&quot;NOP&quot;);asm(&quot;NOP&quot;);asm(&quot;NOP&quot;); }<br/><br/>for delay. and no -O2 !
+</dd>
+<dt class="postheader">
+Title: <strong>Re: I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>ASalina</strong> on <strong>03 / June / 2008, 13:45:33</strong>
+</dt>
+<dd class="postbody">
+<div class="quoteheader"><div class="topslice_quote"><a href="http://chdk.setepontos.com/index.php?topic=1586.msg14242#msg14242">Quote from: owerlord on 02 / June / 2008, 12:36:59</a></div></div><blockquote class="bbc_standard_quote">I spend a bit of IDA analysing code from my compilations, and ended with something like that:<br/><br/>entryadr=0x800030<br/><br/>CFLAGS=-nostdlib -march=armv5te -fno-builtin<br/>LDFLAGS=-Wl,-Ttext,$(entryadr)<br/><br/></blockquote><div class="quotefooter"><div class="botslice_quote"></div></div><br/>I tried with these values and they don&#039;t seem to work properly. My little blinker program just lights up one LED and seems to hang.<br/><br/>Using:<br/><br/>CFLAGS=-fno-builtin -Ilib -mcpu=arm9<br/><br/>(Actually, a string in the flasher says &quot;ARM946ES&quot; but arm-elf-gcc won&#039;t accept &quot;-mcpu=arm946e-s&quot; like it says in the info file)<br/><br/>LDFLAGS=-fno-builtin -nostdlib -Wl,-Ttext,1900<br/><br/>is what currently works. I don&#039;t know why.<br/><br/>I&#039;m going to try to make the dummy firmware section much smaller next, so it will load faster and leave more free memory.<br/>
+</dd>
+<dt class="postheader">
+Title: <strong>Re: I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>mx3</strong> on <strong>03 / June / 2008, 13:53:34</strong>
+</dt>
+<dd class="postbody">
+<div class="quoteheader"><div class="topslice_quote"><a href="http://chdk.setepontos.com/index.php?topic=1586.msg14394#msg14394">Quote from: ASalina on 03 / June / 2008, 13:45:33</a></div></div><blockquote class="bbc_standard_quote"><br/>LDFLAGS=-fno-builtin -nostdlib -Wl,-Ttext,1900<br/><br/>is what currently works. I don&#039;t know why.<br/><br/></blockquote><div class="quotefooter"><div class="botslice_quote"></div></div><br/>I suggest you to use&nbsp; -fpic&nbsp; option:<br/>arm-elf-gcc -fno-builtin -O2 -Ilib -nostdlib&nbsp; -fpic&nbsp; -o scanled.exec entry.o scanled.o -lgcc<br/><br/>it will generate position independent code.<br/>it is does not matter at wich address code will be loaded and executed<br/>
+</dd>
+<dt class="postheader">
+Title: <strong>Re: I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>ASalina</strong> on <strong>03 / June / 2008, 14:00:52</strong>
+</dt>
+<dd class="postbody">
+<div class="quoteheader"><div class="topslice_quote"><a href="http://chdk.setepontos.com/index.php?topic=1586.msg14394#msg14394">Quote from: ASalina on 03 / June / 2008, 13:45:33</a></div></div><blockquote class="bbc_standard_quote"><br/>I&#039;m going to try to make the dummy firmware section much smaller next, so it will load faster and leave more free memory.<br/><br/></blockquote><div class="quotefooter"><div class="botslice_quote"></div></div><br/>Ok, that works. The dummy firmware payload is now only ~8K bytes long.<br/><br/>Here&#039;s the diff file for mkfir.c<br/><br/><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><div class="block_code" style="font-size: x-small"><pre><code>--- mkfir.c~&nbsp; &nbsp; 2008-06-03 08:32:31.000000000 -0400<br/>+++ mkfir.c&nbsp; &nbsp; &nbsp;2008-06-03 08:47:26.000000000 -0400<br/>@@ -109,7 +109,7 @@<br/>&nbsp; &nbsp; &nbsp; &nbsp; }<br/>&nbsp; &nbsp; &nbsp; &nbsp; fclose(pht);<br/><br/>-&nbsp; &nbsp; &nbsp; &nbsp;for(q = 0; q &lt; 8192000/sizeof(payload); q++)<br/>+&nbsp; &nbsp; &nbsp; &nbsp;for(q = 0; q &lt; 8192/sizeof(payload); q++)<br/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fwrite(payload, sizeof(payload), 1, tmp);<br/><br/>&nbsp; &nbsp; &nbsp; &nbsp; fseek(tmp, 0, SEEK_END);<br/></code></pre></div><br/>It&#039;s strange though. When I tried to remove the for() loop and just write one &quot;RET&quot; instruction as the payload, the camera hung. If the payload has 2k RET&#039;s the program runs ok.
+</dd>
+<dt class="postheader">
+Title: <strong>Re: I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>ASalina</strong> on <strong>03 / June / 2008, 14:12:46</strong>
+</dt>
+<dd class="postbody">
+<div class="quoteheader"><div class="topslice_quote"><a href="http://chdk.setepontos.com/index.php?topic=1586.msg14395#msg14395">Quote from: mx3 on 03 / June / 2008, 13:53:34</a></div></div><blockquote class="bbc_standard_quote"><br/>I suggest you to use&nbsp; -fpic&nbsp; option:<br/>arm-elf-gcc -fno-builtin -O2 -Ilib -nostdlib&nbsp; -fpic&nbsp; -o scanled.exec entry.o scanled.o -lgcc<br/><br/>it will generate position independent code.<br/>it is does not matter at wich address code will be loaded and executed<br/><br/></blockquote><div class="quotefooter"><div class="botslice_quote"></div></div><br/>Ok, thanks. That works.<br/>The line is exactly:<br/><br/><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><div class="block_code" style="font-size: x-small"><pre><code>arm-elf-gcc -fno-builtin -nostdlib -fpic -o scanled.exec entry.o scanled.o<br/></code></pre></div><br/><br/>
+</dd>
+<dt class="postheader">
+Title: <strong>Re: I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>holeepassion</strong> on <strong>18 / July / 2008, 06:42:43</strong>
+</dt>
+<dd class="postbody">
+do I see progress .. yessssssssssssssssssssssssssssssssssssssssss .... <br/><br/>happy new dSLR 450 D ... dSLR video please ... :D
+</dd>
+<dt class="postheader">
+Title: <strong>Re: I Got My 40D's LED to Light Up!</strong><br/>
+Post by: <strong>Neptune</strong> on <strong>21 / September / 2008, 17:44:35</strong>
+</dt>
+<dd class="postbody">
+Hi!<br/><br/>Impressive work. <br/><br/>The LED in DirectPrint button is perfectly suited for Mirror Lockup switching and indication. One press and it activates (LED on) and the other press deactivates the function (LED off).<br/><br/>I hope you will succeed in that.<br/><br/>Best regards,<br/><br/>Neptune
+</dd>
+</dl>
+<div id="footer" class="smalltext">
+<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://chdk.setepontos.com/index.php?action=credits" title="Simple Machines Forum" target="_blank" class="new_win">SMF 2.0.7</a> |
+<a href="http://www.simplemachines.org/about/smf/license.php" title="License" target="_blank" class="new_win">SMF &copy; 2013</a>, <a href="http://www.simplemachines.org" title="Simple Machines" target="_blank" class="new_win">Simple Machines</a><br/><a href="http://www.simpleportal.net/" target="_blank" class="new_win">SimplePortal 2.3.5 &copy; 2008-2012, SimplePortal</a><br/><span class="smalltext"><a href="http://www.smfads.com" target="_blank">SMFAds</a> for <a href="http://www.createaforum.com" title="Forum Hosting">Free Forums</a></span>
+</span>
+</div>
+</body>
+</html>
